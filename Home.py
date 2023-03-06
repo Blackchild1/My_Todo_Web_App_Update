@@ -13,11 +13,12 @@ st.set_page_config(
 st.write("# Welcome to TopG Todo App! 👋")
 st.markdown(
     """
-    ### 👈 You can always read notes on your todos through the sidebar!    
+    ### 👈 You can always read details on your todos using the sidebar!    
  
    """
 )
 
+st.write(time.strftime("%b %d, %Y %H:%M"))
 todos = functions.get_todos()
 
 for todo in todos:
