@@ -32,3 +32,11 @@ st.markdown(
 
    """
 )
+
+st.markdown(
+    """
+    ### You can always reach out to us on
+    ** muhammaddhikrullah59@gmail.com
+
+    """
+            )
