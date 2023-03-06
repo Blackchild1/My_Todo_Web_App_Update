@@ -16,10 +16,10 @@ st.markdown(
     This is basically a todo app where you can add list of things you 
     wish to accomplish in a day or two so, you basically do that by
     adding tip of your todo in the "add new todo" box, press enter then give 
-    a full detail on it in "notes" box press enter. 
+    a full detail on it in "notes" box and then press enter. 
     ### 👈 You can always read details on your todos using the sidebar!    
         - the "todos documentation" page contains your todo tip as an header 
-        and your todo notes as a subheader for read through anytime.
+        and your todo notes as a subheader for you to read through anytime.
    """
 )
 
