@@ -65,13 +65,14 @@ with tab1:
             st.experimental_rerun()
 
     st.text_input(label="", placeholder="Add new todo...",
-                  on_change=add_todo, key='new_todo')
+                  on_change=add_todo,
+                  key='new_todo', label_visibility="hidden")
 
     st.text_area(label="",
                  placeholder=st.subheader("Add an explanation of what your todo entails"),
                  on_change=add_doc,
                  key="todo_note",
-                 label_visibility="visible"
+                 label_visibility="hidden"
                  )
 
 with tab2:
