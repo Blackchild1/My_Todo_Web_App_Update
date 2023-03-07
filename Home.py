@@ -10,20 +10,23 @@ st.set_page_config(
 )
 
 
-st.write("# Welcome to TopG Todo App! 👋")
+st.write("# Welcome To Top-G To-Do List App! 👋")
 st.markdown(
     """
-    This is basically a todo app where you can add list of things you 
-    wish to accomplish in a day or two so, you basically do that by
-    adding tip of your todo in the "add new todo" box, press enter then give 
-    a full detail on it in "notes" box and then press enter. 
-    ### 👈 You can always read details on your todos using the sidebar!    
-        - the "todos documentation" page contains your todo tip as an header 
-        and your todo notes as a subheader for you to read through anytime.
+    This is basically a to-do app where you can add list of things you 
+    wish to accomplish in a day or two.
+    So, you start by entering your to-do in the "add new to-do" box then,
+    press enter. 
+    
+    You can give a full detail on your to-do which can be written in the 
+    "notes" box below then,
+    press enter. 
+    
+    
+    👈 Check the "About App" page for better understanding.
    """
 )
 
-st.write(time.strftime("%b %d, %Y %H:%M"))
 todos = functions.get_todos()
 
 for todo in todos:
@@ -47,11 +50,17 @@ def add_doc():
 
 new_todos = functions.get_todos("new_todos.txt")
 
-tab1, tab2 = st.tabs(["My Todos", "Completed Todos"])
+tab1, tab2 = st.tabs(["**My To-Do List**", "**Completed To-Do List**"])
 
 with tab1:
-    st.header("Todos")
-    st.subheader("You can move todo by checking the box")
+    st.header("To-Do List")
+
+    st.text_input(label="", placeholder="Add new to-do...",
+                  on_change=add_todo,
+                  key='new_todo', label_visibility="hidden")
+
+    st.subheader("You can move to-do by clicking the box beside each to-do")
+
     for index, todo in enumerate(todos):
         str1 = f"{index}. {todo}"
 
@@ -69,20 +78,16 @@ with tab1:
             del st.session_state[str1]
             st.experimental_rerun()
 
-    st.text_input(label="", placeholder="Add new todo...",
-                  on_change=add_todo,
-                  key='new_todo', label_visibility="hidden")
-
     st.text_area(label="",
-                 placeholder=st.subheader("Add an explanation of what your todo entails"),
+                 placeholder="Add an explanation of what your to-do entails",
                  on_change=add_doc,
                  key="todo_note",
                  label_visibility="hidden"
                  )
 
 with tab2:
-    st.header("Todos")
-    st.subheader("You can delete todo by checking the box")
+    st.header("To-Do List")
+    st.subheader("You can delete to-do by clicking the box beside each to-do")
 
     for index, todo in enumerate(new_todos):
         index += 1
