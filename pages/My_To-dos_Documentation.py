@@ -2,6 +2,12 @@ import streamlit as st
 import functions
 
 
+st.set_page_config(
+    page_title="Hello",
+    page_icon="✍",
+    layout="wide"
+)
+
 todos = functions.get_todos()
 
 for todo in todos:
